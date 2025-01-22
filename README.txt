@@ -54,3 +54,47 @@ Update a drone's details
 Delete a drone by its ID
   - Path Variable: id (Drone ID)
   - Response: No Content
+
+Medication
+1. POST /medication
+Register a new medication
+  - Request Body: Medication object
+  - Response: Created medication details
+2. GET /medication
+Get a list of all medications
+  - Response: List of all medications
+3. GET /medication/{id}
+Get details of a medication by its ID
+  - Path Variable: id (Medication ID)
+  - Response: Medication details
+4. PUT /medication/{id}
+Update medication details
+  - Path Variable: id (Medication ID)
+  - Request Body: Updated Medication object
+  - Response: Updated medication details
+5. DELETE /medication/{id}
+Delete a medication by its ID
+  - Path Variable: id (Medication ID)
+  - Response: No Content
+
+Drone Medication
+1. POST /droneMedication/{droneId}/load
+Load a drone with medications
+  - Path Variable: droneId (Drone ID)
+  - Request Body: List of medication IDs
+  - Response: Updated drone with loaded medications
+2. GET /droneMedication/{droneId}/medications
+Get medications loaded onto a drone
+  - Path Variable: droneId (Drone ID)
+  - Response: List of medications loaded onto the drone
+3. GET /droneMedication/available
+Get available drones for loading
+  - Response: List of available drones
+4. GET /droneMedication/{droneId}/battery
+Check the battery level of a drone
+  - Path Variable: droneId (Drone ID)
+  - Response: Drone's battery level (percentage)
+5. POST /droneMedication/{droneId}/complete-delivery
+Complete the medication delivery and reduce battery level
+  - Path Variable: droneId (Drone ID)
+  - Response: Success or error message indicating the delivery status
